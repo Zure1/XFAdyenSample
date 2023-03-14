@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
+using XFAdyenSample.iOS.Services;
+using XFAdyenSample.Services;
 
 namespace XFAdyenSample.iOS
 {
@@ -13,6 +16,11 @@ namespace XFAdyenSample.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
+        public AppDelegate()
+        {
+            DependencyService.Register<IAdyenService, AdyenService>();
+        }
+
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
